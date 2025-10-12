@@ -62,24 +62,6 @@ Employees can request items, sellers fulfill orders, and admins manage everythin
 
 ---
 
-## 🧠 Project Architecture
-
-```mermaid
-flowchart TD
-A[Employee] -->|Login & Requests| B[Next.js Frontend]
-B -->|API Calls| C[Node.js Backend (Next.js API Routes)]
-C --> D[Neon PostgreSQL Database]
-C --> E[Clerk Auth Service]
-C --> F[ImageKit (Product Images)]
-C --> G[Inngest (Event Handlers)]
-C --> H[Stripe (Payments)]
-H -->|Webhooks| C
-C --> I[Admin Dashboard]
-I --> J[Vercel (Deployment)]
-````
-
----
-
 ## ⚙️ Tech Stack
 
 | Layer               | Technology                                                           | Description                                    |

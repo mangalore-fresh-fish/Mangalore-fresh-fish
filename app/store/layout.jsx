@@ -2,8 +2,8 @@ import StoreLayout from "@/components/store/StoreLayout";
 import {SignedIn, SignedOut, SignIn} from "@clerk/nextjs"
 
 export const metadata = {
-    title: "GoCart. - Store Dashboard",
-    description: "GoCart. - Store Dashboard",
+    title: "Mangalore Fresh Fish",
+    description: "Mangalore Fresh Fish",
 };
 
 export default function RootAdminLayout({ children }) {

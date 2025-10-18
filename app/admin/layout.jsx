@@ -2,8 +2,8 @@ import AdminLayout from "@/components/admin/AdminLayout";
 import {SignedIn, SignedOut, SignIn} from "@clerk/nextjs"
 
 export const metadata = {
-    title: "GoCart. - Admin",
-    description: "GoCart. - Admin",
+    title: "Mangalore Fresh Fish",
+    description: "Mangalore Fresh Fish",
 };
 
 export default function RootAdminLayout({ children }) {

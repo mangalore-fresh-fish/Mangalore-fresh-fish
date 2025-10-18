@@ -158,7 +158,7 @@ const OrderSummary = ({ totalPrice, items }) => {
                     </Protect>
                     </p>
             </div>
-            <button onClick={e => toast.promise(handlePlaceOrder(e), { loading: 'placing Order...' })} className='w-full bg-slate-700 text-white py-2.5 rounded hover:bg-slate-900 active:scale-95 transition-all'>Submit for Approval</button>
+            <button onClick={e => toast.promise(handlePlaceOrder(e), { loading: 'placing Order...' })} className='w-full bg-slate-700 text-white py-2.5 rounded hover:bg-slate-900 active:scale-95 transition-all'>Place Order</button>
 
             {showAddressModal && <AddressModal setShowAddressModal={setShowAddressModal} />}
 

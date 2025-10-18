@@ -1,390 +1,282 @@
-import gs_logo from "./gs_logo.jpg"
-import happy_store from "./happy_store.webp"
-import upload_area from "./upload_area.svg"
-import hero_model_img from "./hero_model_img.png"
-import hero_product_img1 from "./hero_product_img1.png"
-import hero_product_img2 from "./hero_product_img2.png"
-import product_img1 from "./product_img1.png"
-import product_img2 from "./product_img2.png"
-import product_img3 from "./product_img3.png"
-import product_img4 from "./product_img4.png"
-import product_img5 from "./product_img5.png"
-import product_img6 from "./product_img6.png"
-import product_img7 from "./product_img7.png"
-import product_img8 from "./product_img8.png"
-import product_img9 from "./product_img9.png"
-import product_img10 from "./product_img10.png"
-import product_img11 from "./product_img11.png"
-import product_img12 from "./product_img12.png"
-import { ClockFadingIcon, HeadsetIcon, SendIcon } from "lucide-react";
-import profile_pic1 from "./profile_pic1.jpg"
-import profile_pic2 from "./profile_pic2.jpg"
-import profile_pic3 from "./profile_pic3.jpg"
+// --- IMPORTS ---
+// --- IMPORTS ---
+// Import your project-specific images
+import logo from "./logo.jpg";
+import hero_fish from "./hero-fish.jpg";
+import bangda from "./bangda.jpg";
+import bhotayi from "./bhotayi.jpg";
+import pomfret from "./pomfret.jpg";
+import kingfish from "./kingfish.jpg";
+import prawns from "./prawns.jpg";
+import red_snapper from "./red-snapper.jpg";
+import fresh from "./fresh.jpg";
+import tharle from "./tharle.jpg"; // This fixes the build error
 
+// Import icons for features (matched to index.html)
+import { AnchorIcon, LeafIcon, TruckIcon } from "lucide-react";
+
+// Import dummy user profile pics
+import profile_pic1 from "./profile_pic1.jpg";
+
+
+// --- ASSET EXPORTS ---
 export const assets = {
-    upload_area, hero_model_img,
-    hero_product_img1, hero_product_img2, gs_logo,
-    product_img1, product_img2, product_img3, product_img4, product_img5, product_img6,
-    product_img7, product_img8, product_img9, product_img10, product_img11, product_img12,
-}
+    logo,
+    hero_fish,
+    bangda,
+    bhotayi,
+    pomfret,
+    kingfish,
+    prawns,
+    red_snapper,
+    tharle,
+    fresh
+};
 
-export const categories = ["Headphones", "Speakers", "Watch", "Earbuds", "Mouse"];
+// --- CATEGORIES ---
+// Categories relevant to fish
+export const categories = ["Seawater Fish", "Shellfish", "Fresh Catch", "Local Favorites"];
 
-export const dummyRatingsData = [
-    { id: "rat_1", rating: 4.2, review: "I was a bit skeptical at first, but this product turned out to be even better than I imagined. The quality feels premium, it's easy to use, and it delivers exactly what was promised. I've already recommended it to friends and will definitely purchase again in the future.", user: { name: 'Kristin Watson', image: profile_pic1 }, productId: "prod_1", createdAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)', updatedAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)', product: { name: 'Bluetooth Speakers', category:'Electronics', id:'prod_1'} },
-    { id: "rat_2", rating: 5.0, review: "This product is great. I love it!  You made it so simple. My new site is so much faster and easier to work with than my old site.", user: { name: 'Jenny Wilson', image: profile_pic2 }, productId: "prod_2", createdAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)', updatedAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)', product: { name: 'Bluetooth Speakers', category:'Electronics', id:'prod_1'} },
-    { id: "rat_3", rating: 4.1, review: "This product is amazing. I love it!  You made it so simple. My new site is so much faster and easier to work with than my old site.", user: { name: 'Bessie Cooper', image: profile_pic3 }, productId: "prod_3", createdAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)', updatedAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)', product: { name: 'Bluetooth Speakers', category:'Electronics', id:'prod_1'} },
-    { id: "rat_4", rating: 5.0, review: "This product is great. I love it!  You made it so simple. My new site is so much faster and easier to work with than my old site.", user: { name: 'Kristin Watson', image: profile_pic1 }, productId: "prod_4", createdAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)', updatedAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)', product: { name: 'Bluetooth Speakers', category:'Electronics', id:'prod_1'} },
-    { id: "rat_5", rating: 4.3, review: "Overall, I'm very happy with this purchase. It works as described and feels durable. The only reason I didn't give it five stars is because of a small issue (such as setup taking a bit longer than expected, or packaging being slightly damaged). Still, highly recommend it for anyone looking for a reliable option.", user: { name: 'Jenny Wilson', image: profile_pic2 }, productId: "prod_5", createdAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)', updatedAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)', product: { name: 'Bluetooth Speakers', category:'Electronics', id:'prod_1'} },
-    { id: "rat_6", rating: 5.0, review: "This product is great. I love it!  You made it so simple. My new site is so much faster and easier to work with than my old site.", user: { name: 'Bessie Cooper', image: profile_pic3 }, productId: "prod_6", createdAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)', updatedAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)', product: { name: 'Bluetooth Speakers', category:'Electronics', id:'prod_1'} },
-]
-
+// --- DUMMY STORE (SINGLE STORE) ---
+// Replaced "Happy Shop" with "Mangalore Fresh Fish" data
 export const dummyStoreData = {
-    id: "store_1",
-    userId: "user_1",
-    name: "Happy Shop",
-    description: "At Happy Shop, we believe shopping should be simple, smart, and satisfying. Whether you're hunting for the latest fashion trends, top-notch electronics, home essentials, or unique lifestyle products — we've got it all under one digital roof.",
-    username: "happyshop",
-    address: "3rd Floor, Happy Shop , New Building, 123 street , c sector , NY, US",
+    id: "store_mff_1",
+    userId: "user_admin",
+    name: "Mangalore Fresh Fish",
+    description: "Your weekly link to the coast. Bringing the freshest seafood from the net to your kitchen.",
+    username: "mangalorefreshfish",
+    address: "Bangalore, India",
     status: "approved",
     isActive: true,
-    logo: happy_store,
-    email: "happyshop@example.com",
-    contact: "+0 1234567890",
-    createdAt: "2025-09-04T09:04:16.189Z",
-    updatedAt: "2025-09-04T09:04:44.273Z",
+    logo: logo,
+    email: "support@mangalorefresh.fish",
+    contact: "+91 6364101127",
     user: {
-        id: "user_31dOriXqC4TATvc0brIhlYbwwc5",
-        name: "Great Stack",
-        email: "user.greatstack@gmail.com",
-        image: gs_logo,
+        id: "user_admin",
+        name: "Admin",
+        email: "support@mangalorefresh.fish",
+        image: logo,
     }
-}
+};
 
+// --- DUMMY REVIEWS ---
+// Reviews rewritten for fish products
+export const dummyRatingsData = [
+    { id: "rat_1", rating: 5.0, review: "Absolutely fresh Bangda! Tasted just like home. The weekend delivery is so convenient.", user: { name: 'Rohan K.', image: profile_pic1 }, productId: "prod_1", createdAt: 'Sat Oct 18 2025 14:51:25 GMT+0530 (India Standard Time)' },
+    { id: "rat_2", rating: 4.5, review: "Amazing quality Prawns. They were clean and packed perfectly. Will be ordering every week.", user: { name: 'Priya S.', image: profile_pic1 }, productId: "prod_5", createdAt: 'Sat Oct 17 2025 10:30:00 GMT+0530 (India Standard Time)' },
+    { id: "rat_3", rating: 5.0, review: "The Pomfret was fantastic. Great size and very fresh. 10/10.", user: { name: 'Anil Desai', image: profile_pic1 }, productId: "prod_3", createdAt: 'Sat Oct 17 2025 08:15:00 GMT+0530 (India Standard Time)' },
+    { id: "rat_4", rating: 4.0, review: "Good quality Bhotayi. Price is also reasonable compared to other places.", user: { name: 'Shilpa', image: profile_pic1 }, productId: "prod_2", createdAt: 'Sat Oct 16 2025 17:45:00 GMT+0530 (India Standard Time)' },
+    { id: "rat_5", rating: 5.0, review: "Kingfish (Anjal) was perfect for the weekend fry. Cut and cleaned well. Impressed!", user: { name: 'Vikram', image: profile_pic1 }, productId: "prod_4", createdAt: 'Sat Oct 16 2025 12:00:00 GMT+0530 (India Standard Time)' },
+];
+
+// --- DUMMY PRODUCTS ---
+// Replaced with DEFAULT_PRODUCTS from main.js
 export const productDummyData = [
     {
-        id: "prod_1",
-        name: "Modern table lamp",
-        description: "Modern table lamp with a sleek design. It's perfect for any room. It's made of high-quality materials and comes with a lifetime warranty. Enhance your audio experience with this earbuds. Indulge yourself in a world of pure sound with 50 hours of uninterrupted playtime. Equipped with the cutting-edge Zen Mode Tech ENC and BoomX Tech, prepare to be enthralled by a symphony of crystal-clear melodies.",
-        mrp: 40,
-        price: 29,
-        images: [product_img1, product_img2, product_img3, product_img4],
-        category: "Decoration",
-        storeId: "seller_1",
+        id: "prod_1", // Was id 1
+        name: "Bangda (Mackerel)",
+        description: "A local favorite, perfect for frying or curry. Also known as 'ಬಾಂಗ್ಗಡ'. Our fish is 100% natural and sourced directly from Mangalorean fishermen.",
+        mrp: 250, // Invented MRP
+        price: 220,
+        images: [bangda],
+        category: "Seawater Fish",
+        storeId: "store_mff_1",
         inStock: true,
         store: dummyStoreData,
-        rating: dummyRatingsData,
-        createdAt: 'Sat Jul 29 2025 14:51:25 GMT+0530 (India Standard Time)',
-        updatedAt: 'Sat Jul 29 2025 14:51:25 GMT+0530 (India Standard Time)',
+        rating: [dummyRatingsData[0]],
+        createdAt: 'Sat Oct 18 2025 14:51:25 GMT+0530 (India Standard Time)',
     },
     {
-        id: "prod_2",
-        name: "Smart speaker gray",
-        description: "Smart speaker with a sleek design. It's perfect for any room. It's made of high-quality materials and comes with a lifetime warranty.",
-        mrp: 50,
-        price: 29,
-        images: [product_img2],
-        storeId: "seller_1",
+        id: "prod_2", // Was id 2
+        name: "Bhotayi (Sardine)",
+        description: "Small, oil-rich fish, great for health. Also known as 'ಭೋತಾಯಿ'. Delivered fresh to your door on Saturday or Sunday.",
+        mrp: 200, // Invented MRP
+        price: 180,
+        images: [bhotayi],
+        category: "Seawater Fish",
+        storeId: "store_mff_1",
         inStock: true,
         store: dummyStoreData,
-        category: "Speakers",
-        rating: dummyRatingsData,
-        createdAt: 'Sat Jul 28 2025 14:51:25 GMT+0530 (India Standard Time)',
-        updatedAt: 'Sat Jul 28 2025 14:51:25 GMT+0530 (India Standard Time)',
+        rating: [dummyRatingsData[3]],
+        createdAt: 'Sat Oct 18 2025 14:50:25 GMT+0530 (India Standard Time)',
     },
     {
-        id: "prod_3",
-        name: "Smart watch white",
-        description: "Smart watch with a sleek design. It's perfect for any room. It's made of high-quality materials and comes with a lifetime warranty.",
-        mrp: 60,
-        price: 29,
-        images: [product_img3],
-        storeId: "seller_1",
+        id: "prod_3", // Was id 3
+        name: "Pomfret",
+        description: "A premium, flat-bodied fish, prized for its delicate white flesh. Also known as 'ಪಾಂಪ್ಲೆಟ್'. 100% free from chemicals.",
+        mrp: 500, // Invented MRP
+        price: 480,
+        images: [pomfret],
+        category: "Premium",
+        storeId: "store_mff_1",
         inStock: true,
         store: dummyStoreData,
-        category: "Watch",
-        rating: dummyRatingsData,
-        createdAt: 'Sat Jul 27 2025 14:51:25 GMT+0530 (India Standard Time)',
-        updatedAt: 'Sat Jul 27 2025 14:51:25 GMT+0530 (India Standard Time)',
+        rating: [dummyRatingsData[2]],
+        createdAt: 'Sat Oct 18 2025 14:49:25 GMT+0530 (India Standard Time)',
     },
     {
-        id: "prod_4",
-        name: "Wireless headphones",
-        description: "Wireless headphones with a sleek design. It's perfect for any room. It's made of high-quality materials and comes with a lifetime warranty.",
-        mrp: 70,
-        price: 29,
-        images: [product_img4],
-        storeId: "seller_1",
+        id: "prod_4", // Was id 4
+        name: "Kingfish (Anjal)",
+        description: "The 'King' of fish, perfect for steaks and frying. Also known as 'ಆಂಜಲ್'. Sourced directly from local fishermen.",
+        mrp: 550, // Invented MRP
+        price: 520,
+        images: [kingfish],
+        category: "Premium",
+        storeId: "store_mff_1",
         inStock: true,
         store: dummyStoreData,
-        category: "Headphones",
-        rating: dummyRatingsData,
-        createdAt: 'Sat Jul 26 2025 14:51:25 GMT+0530 (India Standard Time)',
-        updatedAt: 'Sat Jul 26 2025 14:51:25 GMT+0530 (India Standard Time)',
+        rating: [dummyRatingsData[4]],
+        createdAt: 'Sat Oct 18 2025 14:48:25 GMT+0530 (India Standard Time)',
     },
     {
-        id: "prod_5",
-        name: "Smart watch black",
-        description: "Smart watch with a sleek design. It's perfect for any room. It's made of high-quality materials and comes with a lifetime warranty.",
-        mrp: 49,
-        price: 29,
-        images: [product_img5],
-        storeId: "seller_1",
+        id: "prod_5", // Was id 5
+        name: "Prawns",
+        description: "Fresh, juicy prawns, ideal for curries, biryani, or starters. Also known as 'ಚಿಂಗೆ'. Get them delivered fresh this weekend.",
+        mrp: 630, // Invented MRP
+        price: 600,
+        images: [prawns],
+        category: "Shellfish",
+        storeId: "store_mff_1",
         inStock: true,
         store: dummyStoreData,
-        category: "Watch",
-        rating: [...dummyRatingsData,...dummyRatingsData],
-        createdAt: 'Sat Jul 25 2025 14:51:25 GMT+0530 (India Standard Time)',
-        updatedAt: 'Sat Jul 25 2025 14:51:25 GMT+0530 (India Standard Time)',
+        rating: [dummyRatingsData[1]],
+        createdAt: 'Sat Oct 18 2025 14:47:25 GMT+0530 (India Standard Time)',
     },
     {
-        id: "prod_6",
-        name: "Security Camera",
-        description: "Security Camera with a sleek design. It's perfect for any room. It's made of high-quality materials and comes with a lifetime warranty.",
-        mrp: 59,
-        price: 29,
-        images: [product_img6],
-        storeId: "seller_1",
+        id: "prod_6", // Was id 6
+        name: "Red Snapper",
+        description: "A versatile fish with a firm texture and sweet, nutty flavor. Also known as 'ಕೆಂಪು ಮೀನು'. ",
+        mrp: 380, // Invented MRP
+        price: 350,
+        images: [red_snapper],
+        category: "Seawater Fish",
+        storeId: "store_mff_1",
         inStock: true,
         store: dummyStoreData,
-        category: "Camera",
-        rating: [...dummyRatingsData,...dummyRatingsData],
-        createdAt: 'Sat Jul 25 2025 14:51:25 GMT+0530 (India Standard Time)',
-        updatedAt: 'Sat Jul 25 2025 14:51:25 GMT+0530 (India Standard Time)',
+        rating: [],
+        createdAt: 'Sat Oct 18 2025 14:46:25 GMT+0530 (India Standard Time)',
     },
     {
-        id: "prod_7",
-        name: "Smart Pen for iPad",
-        description: "Smart Pen for iPad with a sleek design. It's perfect for any room. It's made of high-quality materials and comes with a lifetime warranty.",
-        mrp: 89,
-        price: 29,
-        images: [product_img7],
-        storeId: "seller_1",
+        id: "prod_7", // Was id 7
+        name: "tharle",
+        description: "Another variety of Sardine, very popular in coastal cuisine. Also known as 'ತಾರ್ಲಿ'. Order now for weekend delivery.",
+        mrp: 380, // Invented MRP
+        price: 350,
+        images: [tharle],
+        category: "Seawater Fish",
+        storeId: "store_mff_1",
         inStock: true,
         store: dummyStoreData,
-        category: "Pen",
-        rating: [...dummyRatingsData,...dummyRatingsData],
-        createdAt: 'Sat Jul 24 2025 14:51:25 GMT+0530 (India Standard Time)',
-        updatedAt: 'Sat Jul 24 2025 14:51:25 GMT+0530 (India Standard Time)',
-    },
-    {
-        id: "prod_8",
-        name: "Home Theater",
-        description: "Home Theater with a sleek design. It's perfect for any room. It's made of high-quality materials and comes with a lifetime warranty.",
-        mrp: 99,
-        price: 29,
-        images: [product_img8],
-        storeId: "seller_1",
-        inStock: true,
-        store: dummyStoreData,
-        category: "Theater",
-        rating: [...dummyRatingsData,...dummyRatingsData],
-        createdAt: 'Sat Jul 23 2025 14:51:25 GMT+0530 (India Standard Time)',
-        updatedAt: 'Sat Jul 23 2025 14:51:25 GMT+0530 (India Standard Time)',
-    },
-    {
-        id: "prod_9",
-        name: "Apple Wireless Earbuds",
-        description: "Apple Wireless Earbuds with a sleek design. It's perfect for any room. It's made of high-quality materials and comes with a lifetime warranty.",
-        mrp: 89,
-        price: 29,
-        images: [product_img9],
-        storeId: "seller_1",
-        inStock: true,
-        store: dummyStoreData,
-        category: "Earbuds",
-        rating: [...dummyRatingsData,...dummyRatingsData],
-        createdAt: 'Sat Jul 22 2025 14:51:25 GMT+0530 (India Standard Time)',
-        updatedAt: 'Sat Jul 22 2025 14:51:25 GMT+0530 (India Standard Time)',
-    },
-    {
-        id: "prod_10",
-        name: "Apple Smart Watch",
-        description: "Apple Smart Watch with a sleek design. It's perfect for any room. It's made of high-quality materials and comes with a lifetime warranty.",
-        mrp: 179,
-        price: 29,
-        images: [product_img10],
-        storeId: "seller_1",
-        inStock: true,
-        store: dummyStoreData,
-        category: "Watch",
-        rating: [...dummyRatingsData,...dummyRatingsData],
-        createdAt: 'Sat Jul 21 2025 14:51:25 GMT+0530 (India Standard Time)',
-        updatedAt: 'Sat Jul 21 2025 14:51:25 GMT+0530 (India Standard Time)',
-    },
-    {
-        id: "prod_11",
-        name: "RGB Gaming Mouse",
-        description: "RGB Gaming Mouse with a sleek design. It's perfect for any room. It's made of high-quality materials and comes with a lifetime warranty.",
-        mrp: 39,
-        price: 29,
-        images: [product_img11],
-        storeId: "seller_1",
-        inStock: true,
-        store: dummyStoreData,
-        category: "Mouse",
-        rating: [...dummyRatingsData,...dummyRatingsData],
-        createdAt: 'Sat Jul 20 2025 14:51:25 GMT+0530 (India Standard Time)',
-        updatedAt: 'Sat Jul 20 2025 14:51:25 GMT+0530 (India Standard Time)',
-    },
-    {
-        id: "prod_12",
-        name: "Smart Home Cleaner",
-        description: "Smart Home Cleaner with a sleek design. It's perfect for any room. It's made of high-quality materials and comes with a lifetime warranty.",
-        mrp: 199,
-        price: 29,
-        images: [product_img12],
-        storeId: "seller_1",
-        inStock: true,
-        store: dummyStoreData,
-        category: "Cleaner",
-        rating: [...dummyRatingsData,...dummyRatingsData],
-        createdAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)',
-        updatedAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)',
+        rating: [],
+        createdAt: 'Sat Oct 18 2025 14:45:25 GMT+0530 (India Standard Time)',
     }
 ];
 
+// --- OUR SPECS / FEATURES ---
+// Replaced with "Our Commitment to Quality" from index.html
 export const ourSpecsData = [
-    { title: "Desk-Side Delivery", description: "All requested stationery is delivered directly to your desk.", icon: SendIcon, accent: '#05DF72' },
-    { title: "Simple Request Process", description: "Need something? Find it in the catalog and submit your request in seconds.", icon: ClockFadingIcon, accent: '#FF8904' },
-    { title: "IT & Admin Support", description: "Facing an issue? Our internal support team is here to help.", icon: HeadsetIcon, accent: '#A684FF' }
-]
+    { title: "Directly Sourced", description: "We partner with local fishermen to bring you the freshest catch, cutting out the middleman.", icon: AnchorIcon, accent: '#005f73' },
+    { title: "100% Natural", description: "Our seafood is completely free from chemicals, preservatives, and antibiotics.", icon: LeafIcon, accent: '#2a9d8f' },
+    { title: "Weekend Delivery", description: "Place your order during the week and get it delivered fresh to your door on Saturday or Sunday.", icon: TruckIcon, accent: '#0a9396' }
+];
+
+// --- DUMMY USER & ADDRESS ---
+// Generic data, no changes needed
+export const dummyUserData = {
+    id: "user_31dQbH27HVtovbs13X2cmqefddM",
+    name: "Demo User",
+    email: "user@example.com",
+    image: profile_pic1,
+    cart: {}
+};
 
 export const addressDummyData = {
     id: "addr_1",
-    userId: "user_1",
-    name: "John Doe",
-    email: "johndoe@example.com",
-    street: "123 Main St",
-    city: "New York",
-    state: "NY",
-    zip: "10001",
-    country: "USA",
-    phone: "1234567890",
+    userId: "user_31dQbH27HVtovbs13X2cmqefddM",
+    name: "Demo User",
+    email: "user@example.com",
+    street: "123 MG Road",
+    city: "Bangalore",
+    state: "Karnataka",
+    zip: "560001",
+    country: "India",
+    phone: "9876543210",
     createdAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)',
-}
+};
 
+// --- DUMMY COUPONS ---
+// Generic data, no changes needed
 export const couponDummyData = [
-    { code: "NEW20", description: "20% Off for New Users", discount: 20, forNewUser: true, forMember: false, isPublic: false, expiresAt: "2026-12-31T00:00:00.000Z", createdAt: "2025-08-22T08:35:31.183Z" },
-    { code: "NEW10", description: "10% Off for New Users", discount: 10, forNewUser: true, forMember: false, isPublic: false, expiresAt: "2026-12-31T00:00:00.000Z", createdAt: "2025-08-22T08:35:50.653Z" },
-    { code: "OFF20", description: "20% Off for All Users", discount: 20, forNewUser: false, forMember: false, isPublic: false, expiresAt: "2026-12-31T00:00:00.000Z", createdAt: "2025-08-22T08:42:00.811Z" },
-    { code: "OFF10", description: "10% Off for All Users", discount: 10, forNewUser: false, forMember: false, isPublic: false, expiresAt: "2026-12-31T00:00:00.000Z", createdAt: "2025-08-22T08:42:21.279Z" },
-    { code: "PLUS10", description: "20% Off for Members", discount: 10, forNewUser: false, forMember: true, isPublic: false, expiresAt: "2027-03-06T00:00:00.000Z", createdAt: "2025-08-22T11:38:20.194Z" }
-]
+    { code: "FRESH10", description: "10% Off Your First Order", discount: 10, forNewUser: true, forMember: false, isPublic: true, expiresAt: "2026-12-31T00:00:00.000Z", createdAt: "2025-08-22T08:35:31.183Z" },
+    { code: "WEEKEND20", description: "₹20 Off on orders above ₹500", discount: 20, forNewUser: false, forMember: false, isPublic: true, expiresAt: "2026-12-31T00:00:00.000Z", createdAt: "2025-08-22T08:42:00.811Z" },
+];
 
+// --- DUMMY ORDERS ---
+// Updated to use fish products
 export const orderDummyData = [
     {
         id: "cmemm75h5001jtat89016h1p3",
-        total: 214.2,
+        total: 400, // 220 (Bangda) + 180 (Bhotayi)
         status: "DELIVERED",
         userId: "user_31dQbH27HVtovbs13X2cmqefddM",
-        storeId: "cmemkqnzm000htat8u7n8cpte",
-        addressId: "cmemm6g95001ftat8omv9b883",
-        isPaid: false,
-        paymentMethod: "COD",
-        createdAt: "2025-08-22T09:15:03.929Z",
-        updatedAt: "2025-08-22T09:15:50.723Z",
-        isCouponUsed: true,
-        coupon: dummyRatingsData[2],
+        storeId: "store_mff_1",
+        addressId: "addr_1",
+        isPaid: true,
+        paymentMethod: "Online",
+        createdAt: "2025-10-12T09:15:03.929Z",
+        updatedAt: "2025-10-13T09:15:50.723Z",
+        isCouponUsed: false,
+        coupon: null,
         orderItems: [
-            { orderId: "cmemm75h5001jtat89016h1p3", productId: "cmemlydnx0017tat8h3rg92hz", quantity: 1, price: 89, product: productDummyData[0], },
-            { orderId: "cmemm75h5001jtat89016h1p3", productId: "cmemlxgnk0015tat84qm8si5v", quantity: 1, price: 149, product: productDummyData[1], }
+            { orderId: "cmemm75h5001jtat89016h1p3", productId: "prod_1", quantity: 1, price: 220, product: productDummyData[0], }, // Bangda
+            { orderId: "cmemm75h5001jtat89016h1p3", productId: "prod_2", quantity: 1, price: 180, product: productDummyData[1], }  // Bhotayi
         ],
         address: addressDummyData,
     },
     {
         id: "cmemm6jv7001htat8vmm3gxaf",
-        total: 421.6,
-        status: "DELIVERED",
+        total: 1080, // 480 (Pomfret) + 600 (Prawns)
+        status: "PROCESSING",
         userId: "user_31dQbH27HVtovbs13X2cmqefddM",
-        storeId: "cmemkqnzm000htat8u7n8cpte",
-        addressId: "cmemm6g95001ftat8omv9b883",
+        storeId: "store_mff_1",
+        addressId: "addr_1",
         isPaid: false,
         paymentMethod: "COD",
-        createdAt: "2025-08-22T09:14:35.923Z",
-        updatedAt: "2025-08-22T09:15:52.535Z",
-        isCouponUsed: true,
-        coupon: couponDummyData[0],
+        createdAt: "2025-10-18T08:14:35.923Z",
+        updatedAt: "2025-10-18T08:15:52.535Z",
+        isCouponUsed: false,
+        coupon: null,
         orderItems: [
-            { orderId: "cmemm6jv7001htat8vmm3gxaf", productId: "cmemm1f3y001dtat8liccisar", quantity: 1, price: 229, product: productDummyData[2], },
-            { orderId: "cmemm6jv7001htat8vmm3gxaf", productId: "cmemm0nh2001btat8glfvhry1", quantity: 1, price: 99, product: productDummyData[3], },
-            { orderId: "cmemm6jv7001htat8vmm3gxaf", productId: "cmemlz8640019tat8kz7emqca", quantity: 1, price: 199, product: productDummyData[4], }
+            { orderId: "cmemm6jv7001htat8vmm3gxaf", productId: "prod_3", quantity: 1, price: 480, product: productDummyData[2], }, // Pomfret
+            { orderId: "cmemm6jv7001htat8vmm3gxaf", productId: "prod_5", quantity: 1, price: 600, product: productDummyData[4], }  // Prawns
         ],
         address: addressDummyData,
     }
-]
+];
 
-export const dummyUserData = {
-    id: "user_31dQbH27HVtovbs13X2cmqefddM",
-    name: "GreatStack",
-    email: "greatstack@example.com",
-    image: gs_logo,
-    cart: {}
-}
-
+// --- DUMMY STORES LIST (SINGLE STORE) ---
+// Replaced with just the one MFF store
 export const storesDummyData = [
-    {
-        id: "cmemkb98v0001tat8r1hiyxhn",
-        userId: "user_31dOriXqC4TATvc0brIhlYbwwc5",
-        name: "GreatStack",
-        description: "GreatStack is the education marketplace where you can buy goodies related to coding and tech",
-        username: "greatstack",
-        address: "123 Maplewood Drive Springfield, IL 62704 USA",
-        status: "approved",
-        isActive: true,
-        logo: gs_logo,
-        email: "greatstack@example.com",
-        contact: "+0 1234567890",
-        createdAt: "2025-08-22T08:22:16.189Z",
-        updatedAt: "2025-08-22T08:22:44.273Z",
-        user: dummyUserData,
-    },
-    {
-        id: "cmemkqnzm000htat8u7n8cpte",
-        userId: "user_31dQbH27HVtovbs13X2cmqefddM",
-        name: "Happy Shop",
-        description: "At Happy Shop, we believe shopping should be simple, smart, and satisfying. Whether you're hunting for the latest fashion trends, top-notch electronics, home essentials, or unique lifestyle products — we've got it all under one digital roof.",
-        username: "happyshop",
-        address: "3rd Floor, Happy Shop , New Building, 123 street , c sector , NY, US",
-        status: "approved",
-        isActive: true,
-        logo: happy_store,
-        email: "happyshop@example.com",
-        contact: "+0 123456789",
-        createdAt: "2025-08-22T08:34:15.155Z",
-        updatedAt: "2025-08-22T08:34:47.162Z",
-        user: dummyUserData,
-    }
-]
+    dummyStoreData
+];
 
+// --- DASHBOARD DATA ---
+// Generic data, can be left as-is or slightly tweaked
 export const dummyAdminDashboardData = {
-    "orders": 6,
-    "stores": 2,
-    "products": 12,
-    "revenue": "959.10",
+    "orders": 2, // Tweaked
+    "stores": 1, // Tweaked
+    "products": 7, // Tweaked
+    "revenue": "1480.00", // Tweaked
     "allOrders": [
-        { "createdAt": "2025-08-20T08:46:58.239Z", "total": 145.6 },
-        { "createdAt": "2025-08-22T08:46:21.818Z", "total": 97.2 },
-        { "createdAt": "2025-08-22T08:45:59.587Z", "total": 54.4 },
-        { "createdAt": "2025-08-23T09:15:03.929Z", "total": 214.2 },
-        { "createdAt": "2025-08-23T09:14:35.923Z", "total": 421.6 },
-        { "createdAt": "2025-08-23T11:44:29.713Z", "total": 26.1 },
-        { "createdAt": "2025-08-24T09:15:03.929Z", "total": 214.2 },
-        { "createdAt": "2025-08-24T09:14:35.923Z", "total": 421.6 },
-        { "createdAt": "2025-08-24T11:44:29.713Z", "total": 26.1 },
-        { "createdAt": "2025-08-24T11:56:29.713Z", "total": 36.1 },
-        { "createdAt": "2025-08-25T11:44:29.713Z", "total": 26.1 },
-        { "createdAt": "2025-08-25T09:15:03.929Z", "total": 214.2 },
-        { "createdAt": "2025-08-25T09:14:35.923Z", "total": 421.6 },
-        { "createdAt": "2025-08-25T11:44:29.713Z", "total": 26.1 },
-        { "createdAt": "2025-08-25T11:56:29.713Z", "total": 36.1 },
-        { "createdAt": "2025-08-25T11:30:29.713Z", "total": 110.1 }
+        { "createdAt": "2025-10-12T09:15:03.929Z", "total": 400 },
+        { "createdAt": "2025-10-18T08:14:35.923Z", "total": 1080 },
+        // ... more dummy dates and totals
     ]
-}
+};
 
 export const dummyStoreDashboardData = {
     "ratings": dummyRatingsData,
     "totalOrders": 2,
-    "totalEarnings": 636,
-    "totalProducts": 5
-}
+    "totalEarnings": 1480,
+    "totalProducts": 7
+};

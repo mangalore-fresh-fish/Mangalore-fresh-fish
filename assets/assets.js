@@ -10,7 +10,7 @@ import kingfish from "./kingfish.jpg";
 import prawns from "./prawns.jpg";
 import red_snapper from "./red-snapper.jpg";
 import fresh from "./fresh.jpg";
-import tharle from "./tharle.jpg"; // This fixes the build error
+import tharle from "./tharle.jpg";
 
 // Import icons for features (matched to index.html)
 import { AnchorIcon, LeafIcon, TruckIcon } from "lucide-react";
@@ -30,7 +30,8 @@ export const assets = {
     prawns,
     red_snapper,
     tharle,
-    fresh
+    fresh,
+    profile_pic1
 };
 
 // --- CATEGORIES ---
@@ -50,7 +51,7 @@ export const dummyStoreData = {
     isActive: true,
     logo: logo,
     email: "support@mangalorefresh.fish",
-    contact: "+91 6364101127",
+    contact: "+91 9110683618",
     user: {
         id: "user_admin",
         name: "Admin",

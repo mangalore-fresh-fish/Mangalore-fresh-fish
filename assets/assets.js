@@ -178,7 +178,7 @@ export const productDummyData = [
 export const ourSpecsData = [
     { title: "Directly Sourced", description: "We partner with local fishermen to bring you the freshest catch, cutting out the middleman.", icon: AnchorIcon, accent: '#005f73' },
     { title: "100% Natural", description: "Our seafood is completely free from chemicals, preservatives, and antibiotics.", icon: LeafIcon, accent: '#2a9d8f' },
-    { title: "Weekend Delivery", description: "Place your order during the week and get it delivered fresh to your door on Saturday or Sunday.", icon: TruckIcon, accent: '#0a9396' }
+    { title: "Sunday Delivery", description: "Place your order during the week and get it delivered fresh to your door every Sunday.", icon: TruckIcon, accent: '#0a9396' }
 ];
 
 // --- DUMMY USER & ADDRESS ---

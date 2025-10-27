@@ -16,39 +16,36 @@ const Hero = () => {
         {/* Main Hero Block */}
         <div className="relative flex-1 flex flex-col bg-gray-50 rounded-3xl xl:min-h-100 group overflow-hidden ring-1 ring-gray-200">
           <div className="p-6 sm:p-16 z-10">
-<motion.div
-  initial={{ opacity: 0, y: 5 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.5, type: "spring", stiffness: 80 }}
-  whileHover={{ scale: 1.03 }}
-  className="inline-flex items-center justify-center sm:justify-start gap-2 sm:gap-3 bg-green-50 text-green-600 font-medium px-2 sm:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-sm ring-1 ring-green-200 shadow-sm w-full sm:w-fit group relative overflow-hidden whitespace-nowrap"
->
-  {/* Shimmer effect */}
-  <motion.span
-    className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent"
-    animate={{ x: ["-100%", "100%"] }}
-    transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-  />
+            <motion.div
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, type: "spring", stiffness: 80 }}
+              whileHover={{ scale: 1.03 }}
+              className="inline-flex items-center justify-center sm:justify-start gap-2 sm:gap-3 bg-green-50 text-green-600 font-medium px-2 sm:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-sm ring-1 ring-green-200 shadow-sm w-full sm:w-fit group relative overflow-hidden whitespace-nowrap"
+            >
+              {/* Shimmer effect */}
+              <motion.span
+                className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                animate={{ x: ["-100%", "100%"] }}
+                transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+              />
 
-  {/* Badge */}
-  <span className="bg-green-500/90 px-2.5 sm:px-3 py-[3px] sm:py-1 rounded-full text-white text-[9px] sm:text-xs relative z-10 whitespace-nowrap">
-    Fresh Catch
-  </span>
+              {/* Badge */}
+              <span className="bg-green-500/90 px-2.5 sm:px-3 py-[3px] sm:py-1 rounded-full text-white text-[9px] sm:text-xs relative z-10 whitespace-nowrap">
+                Fresh Catch
+              </span>
 
-  {/* Text */}
-  <span className="relative z-10 truncate text-[10px] sm:text-sm">
-    Fresh Fish Delivered Every Weekend
-  </span>
+              {/* Text */}
+              <span className="relative z-10 truncate text-[10px] sm:text-sm">
+                Fresh Fish Delivered Every Sunday
+              </span>
 
-  {/* Icon */}
-  <ChevronRightIcon
-    className="relative z-10 w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0"
-  />
-</motion.div>
-
+              {/* Icon */}
+              <ChevronRightIcon className="relative z-10 w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0" />
+            </motion.div>
 
             <h2 className="text-3xl sm:text-5xl leading-[1.2] my-6 font-semibold bg-gradient-to-r from-blue-800 to-sky-500 bg-clip-text text-transparent">
-              From Ocean to Home — Fresh Fish, Every Weekend
+              From Ocean to Home — Fresh Fish, Every Sunday
             </h2>
 
             {/* Subtle responsive order notice */}
@@ -61,7 +58,7 @@ const Hero = () => {
               <p className="text-gray-500 text-sm sm:text-base md:text-lg font-light leading-relaxed">
                 Order now for{" "}
                 <span className="text-gray-700 font-medium">
-                  Weekend Delivery 🚚
+                  Sunday Delivery 🚚
                 </span>
                 .
               </p>

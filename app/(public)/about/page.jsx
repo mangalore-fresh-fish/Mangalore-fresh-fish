@@ -18,7 +18,10 @@ const videoEmbed = `https://www.youtube.com/embed/${videoId}?rel=0&modestbrandin
 const WaveDivider = ({ flip = false, className = "" }) => {
   // Two layered waves animated horizontally via framer-motion
   return (
-    <div className={`w-full overflow-hidden leading-none ${className}`} aria-hidden>
+    <div
+      className={`w-full overflow-hidden leading-none ${className}`}
+      aria-hidden
+    >
       <motion.svg
         viewBox="0 0 1200 120"
         preserveAspectRatio="none"
@@ -99,14 +102,15 @@ export default function AboutPage() {
               {/* This font size scales well */}
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
                 We don’t just sell fish — we deliver{" "}
-                <span className="text-teal-600">trust, love</span> and the taste of the coast.
+                <span className="text-teal-600">trust, love</span> and the taste
+                of the coast.
               </h1>
 
               {/* UPDATED: text-base on mobile, text-lg on desktop */}
               <p className="text-slate-700 text-base md:text-lg max-w-xl">
-                Every dawn at the port, we sort the freshest catch — mackerel,
-                kingfish, tiger prawns — and send it your way before sunrise.
-                Honest hands. Honest food. Always fresh, never frozen.
+                Every Sunday morning at the port, we sort the freshest catch —
+                mackerel, kingfish, tiger prawns and deliver it to you before
+                11 AM. Honest hands. Honest food. Always fresh, never frozen.
               </p>
 
               <div className="flex flex-wrap gap-3 mt-4">
@@ -128,9 +132,14 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-4 text-sm text-slate-600 space-y-1">
-                <p>🗓️ <strong>Pre-orders only (Mon–Fri)</strong></p>
+                <p>
+                  🗓️ <strong>Pre-orders only (Mon–Fri)</strong>
+                </p>
                 <p>🌊 Freshly caught Saturday night from the Arabian Sea</p>
-                <p>🚚 Delivered Sunday morning in Bangalore — inspect before paying.</p>
+                <p>
+                  🚚 Delivered Sunday morning in Bangalore — inspect before
+                  paying.
+                </p>
               </div>
             </div>
 
@@ -155,7 +164,9 @@ export default function AboutPage() {
                   </div>
                   <div className="text-right">
                     <p className="text-sm text-slate-500">Guarantee</p>
-                    <p className="font-semibold text-teal-600">Not fresh? Get it free</p>
+                    <p className="font-semibold text-teal-600">
+                      Not fresh? Get it free
+                    </p>
                   </div>
                 </div>
               </div>
@@ -194,7 +205,9 @@ export default function AboutPage() {
           <div className="space-y-4">
             <FadeUp>
               {/* UPDATED: text-2xl on mobile */}
-              <h2 className="text-2xl md:text-3xl font-semibold">Our Own Little World by the Sea</h2>
+              <h2 className="text-2xl md:text-3xl font-semibold">
+                Our Own Little World by the Sea
+              </h2>
             </FadeUp>
 
             {/* animated lines — each fades in with emoji */}
@@ -202,29 +215,45 @@ export default function AboutPage() {
               <FadeUp>
                 {/* UPDATED: text-base on mobile */}
                 <p className="text-slate-700 text-base md:text-lg leading-relaxed">
-                  ❤️ <strong className="underline decoration-emerald-100 decoration-2">Catching fish is our life.</strong> 
-                  For generations, the morning net and the evening family meal have been the heart of what we do.
+                  ❤️{" "}
+                  <strong className="underline decoration-emerald-100 decoration-2">
+                    Catching fish is our life.
+                  </strong>
+                  For generations, the morning net and the evening family meal
+                  have been the heart of what we do.
                 </p>
               </FadeUp>
 
               <FadeUp delay={0.08}>
                 {/* UPDATED: text-base on mobile */}
                 <p className="text-slate-700 text-base md:text-lg leading-relaxed">
-                  🌊 <span className="font-medium">Every wave carries a promise:</span> to bring honest, fresh seafood from the Arabian Sea to your table.
+                  🌊{" "}
+                  <span className="font-medium">
+                    Every wave carries a promise:
+                  </span>{" "}
+                  to bring honest, fresh seafood from the Arabian Sea to your
+                  table.
                 </p>
               </FadeUp>
 
               <FadeUp delay={0.14}>
                 {/* UPDATED: text-base on mobile */}
                 <p className="text-slate-700 text-base md:text-lg leading-relaxed">
-                  🛶 <span className="text-slate-800">Mackerel, prawns, kingfish</span> and more — as soon as the port arrives on Saturday night, we prepare and pack for Sunday delivery.
+                  🛶{" "}
+                  <span className="text-slate-800">
+                    Mackerel, prawns, kingfish
+                  </span>{" "}
+                  and more — as soon as the port arrives on Saturday night, we
+                  prepare and pack for Sunday delivery.
                 </p>
               </FadeUp>
 
               <FadeUp delay={0.22}>
                 {/* UPDATED: text-base on mobile */}
                 <p className="text-slate-700 text-base md:text-lg leading-relaxed italic border-l-4 pl-4 border-teal-100">
-                  “No one can deliver fresher fish than us. If you’re not happy with the freshness, we’ll make it right.” — Mangalore Fresh Fish
+                  “No one can deliver fresher fish than us. If you’re not happy
+                  with the freshness, we’ll make it right.” — Mangalore Fresh
+                  Fish
                 </p>
               </FadeUp>
 
@@ -257,13 +286,19 @@ export default function AboutPage() {
           <div>
             <FadeUp>
               {/* UPDATED: text-2xl on mobile */}
-              <h3 className="text-2xl md:text-3xl font-semibold mb-3">Why you should trust us🫂</h3>
+              <h3 className="text-2xl md:text-3xl font-semibold mb-3">
+                Why you should trust us🫂
+              </h3>
               <p className="text-slate-700 mb-6">
-                Trust is earned at your doorstep. We let you inspect your order before you pay — cash on delivery after inspection. Honest, simple, and fair.
+                Trust is earned at your doorstep. We let you inspect your order
+                before you pay — cash on delivery after inspection. Honest,
+                simple, and fair.
               </p>
             </FadeUp>
 
-            <div className="grid sm:grid-cols-1 gap-6"> {/* Reduced gap from 7 to 6 */}
+            <div className="grid sm:grid-cols-1 gap-6">
+              {" "}
+              {/* Reduced gap from 7 to 6 */}
               {[
                 {
                   title: "Inspect First, Pay Later",
@@ -290,7 +325,9 @@ export default function AboutPage() {
                   <div className="p-4 bg-white rounded-xl ring-1 ring-slate-100 shadow-sm flex gap-3 items-start">
                     <div className="text-2xl">{c.icon}</div>
                     <div>
-                      <h4 className="font-semibold text-slate-800">{c.title}</h4>
+                      <h4 className="font-semibold text-slate-800">
+                        {c.title}
+                      </h4>
                       <p className="text-sm text-slate-600 mt-1">{c.text}</p>
                     </div>
                   </div>
@@ -303,7 +340,9 @@ export default function AboutPage() {
           <div>
             <FadeUp>
               {/* UPDATED: text-2xl on mobile */}
-              <h3 className="text-2xl md:text-3xl font-semibold mb-3">How it works — our weekend ritual 🚣</h3>
+              <h3 className="text-2xl md:text-3xl font-semibold mb-3">
+                How it works — our weekend ritual 🚣
+              </h3>
             </FadeUp>
 
             <div className="mt-6 space-y-5">
@@ -347,7 +386,9 @@ export default function AboutPage() {
                   <div>
                     <div className="flex items-center gap-2">
                       <div className="text-xl">{s.icon}</div>
-                      <h4 className="font-semibold text-slate-800">{s.title}</h4>
+                      <h4 className="font-semibold text-slate-800">
+                        {s.title}
+                      </h4>
                     </div>
                     <p className="text-sm text-slate-600 mt-1">{s.text}</p>
                   </div>
@@ -380,7 +421,7 @@ export default function AboutPage() {
             <p className="text-sm text-slate-600 mb-4 max-w-2xl mx-auto">
               Watch the short that shows our early mornings, the hands that sort
               the catch, and the care behind every order. This is the heart of
-Imangalore Fresh Fish.
+              Imangalore Fresh Fish.
             </p>
           </div>
 
@@ -401,7 +442,11 @@ Imangalore Fresh Fish.
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <motion.div
                 animate={{ scale: [0.96, 1.04, 0.96], opacity: [0.6, 1, 0.6] }}
-                transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 2.4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="bg-white/40 rounded-full p-4"
               >
                 <Play className="w-8 h-8 text-slate-800" />

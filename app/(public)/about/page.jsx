@@ -109,8 +109,8 @@ export default function AboutPage() {
               {/* UPDATED: text-base on mobile, text-lg on desktop */}
               <p className="text-slate-700 text-base md:text-lg max-w-xl">
                 Every Sunday morning at the port, we sort the freshest catch —
-                mackerel, kingfish, tiger prawns and deliver it to you before
-                11 AM. Honest hands. Honest food. Always fresh, never frozen.
+                mackerel, kingfish, tiger prawns and deliver it to you before 11
+                AM. Honest hands. Honest food. Always fresh, never frozen.
               </p>
 
               <div className="flex flex-wrap gap-3 mt-4">
@@ -182,98 +182,68 @@ export default function AboutPage() {
       {/* decorative wave */}
       <WaveDivider />
 
-      {/* STORY section */}
-      {/* UPDATED: Reduced mobile padding */}
-      <section className="max-w-6xl mx-auto px-6 py-12 md:py-14 lg:py-20">
-        {/* UPDATED: Reduced mobile gap */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-15 items-center">
-          <motion.div
-            style={{ y: parallaxY }}
-            className="relative w-full h-96 md:h-full rounded-3xl overflow-hidden shadow-lg ring-1 ring-slate-100"
-          >
-            <Image
-              src={profile}
-              alt="Founder / Fishermen"
-              fill
-              sizes="(max-width: 1024px) 600px, 800px"
-              style={{ objectFit: "cover" }}
-            />
-            {/* subtle overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/6 to-transparent" />
-          </motion.div>
+      {/* STORY section - Simplified & Enhanced UI */}
+      <section className="max-w-3xl mx-auto px-6 py-16 md:py-24 text-center">
+        <FadeUp>
+          <h2 className="text-3xl md:text-4xl font-semibold text-slate-800 mb-6">
+            Our Own Little World by the Sea
+          </h2>
+        </FadeUp>
 
-          <div className="space-y-4">
-            <FadeUp>
-              {/* UPDATED: text-2xl on mobile */}
-              <h2 className="text-2xl md:text-3xl font-semibold">
-                Our Own Little World by the Sea
-              </h2>
-            </FadeUp>
+        <div className="space-y-6 text-slate-700 text-base md:text-lg leading-relaxed">
+          <FadeUp>
+            <p>
+              ❤️{" "}
+              <strong className="underline decoration-emerald-200 decoration-2">
+                Catching fish is our life.
+              </strong>{" "}
+              For generations, the morning net and the evening family meal have
+              been the heart of what we do.
+            </p>
+          </FadeUp>
 
-            {/* animated lines — each fades in with emoji */}
-            <div className="space-y-4 mt-2">
-              <FadeUp>
-                {/* UPDATED: text-base on mobile */}
-                <p className="text-slate-700 text-base md:text-lg leading-relaxed">
-                  ❤️{" "}
-                  <strong className="underline decoration-emerald-100 decoration-2">
-                    Catching fish is our life.
-                  </strong>
-                  For generations, the morning net and the evening family meal
-                  have been the heart of what we do.
-                </p>
-              </FadeUp>
+          <FadeUp delay={0.08}>
+            <p>
+              🌊{" "}
+              <span className="font-medium">Every wave carries a promise:</span>{" "}
+              to bring honest, fresh seafood from the Arabian Sea to your table.
+            </p>
+          </FadeUp>
 
-              <FadeUp delay={0.08}>
-                {/* UPDATED: text-base on mobile */}
-                <p className="text-slate-700 text-base md:text-lg leading-relaxed">
-                  🌊{" "}
-                  <span className="font-medium">
-                    Every wave carries a promise:
-                  </span>{" "}
-                  to bring honest, fresh seafood from the Arabian Sea to your
-                  table.
-                </p>
-              </FadeUp>
+          <FadeUp delay={0.14}>
+            <p>
+              🛶{" "}
+              <span className="text-slate-800">Mackerel, prawns, kingfish</span>{" "}
+              and more — as soon as the port arrives on Saturday night, we
+              prepare and pack for Sunday delivery.
+            </p>
+          </FadeUp>
 
-              <FadeUp delay={0.14}>
-                {/* UPDATED: text-base on mobile */}
-                <p className="text-slate-700 text-base md:text-lg leading-relaxed">
-                  🛶{" "}
-                  <span className="text-slate-800">
-                    Mackerel, prawns, kingfish
-                  </span>{" "}
-                  and more — as soon as the port arrives on Saturday night, we
-                  prepare and pack for Sunday delivery.
-                </p>
-              </FadeUp>
-
-              <FadeUp delay={0.22}>
-                {/* UPDATED: text-base on mobile */}
-                <p className="text-slate-700 text-base md:text-lg leading-relaxed italic border-l-4 pl-4 border-teal-100">
-                  “No one can deliver fresher fish than us. If you’re not happy
-                  with the freshness, we’ll make it right.” — Mangalore Fresh
-                  Fish
-                </p>
-              </FadeUp>
-
-              <div className="mt-4 flex gap-3">
-                <Link
-                  href="/shop"
-                  className="inline-flex items-center gap-2 bg-emerald-600 text-white px-4 py-2 rounded-full hover:bg-emerald-700 transition"
-                >
-                  Shop Now <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 border border-slate-200 px-4 py-2 rounded-full text-slate-700 hover:bg-slate-50 transition"
-                >
-                  Contact Us
-                </Link>
-              </div>
-            </div>
-          </div>
+          <FadeUp delay={0.22}>
+            <p className="italic border-l-4 pl-4 border-emerald-100 bg-emerald-50/20 rounded-md py-3 text-slate-600">
+              “No one can deliver fresher fish than us. If you’re not happy with
+              the freshness, we’ll make it right.” —{" "}
+              <strong>Mangalore Fresh Fish</strong>
+            </p>
+          </FadeUp>
         </div>
+
+        <FadeUp delay={0.3}>
+          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="/shop"
+              className="inline-flex items-center justify-center gap-2 bg-emerald-600 text-white px-6 py-2.5 rounded-full hover:bg-emerald-700 transition"
+            >
+              Shop Now <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 border border-slate-200 px-6 py-2.5 rounded-full text-slate-700 hover:bg-slate-50 transition"
+            >
+              Contact Us
+            </Link>
+          </div>
+        </FadeUp>
       </section>
 
       {/* wave divider flipped */}

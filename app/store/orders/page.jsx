@@ -147,7 +147,7 @@ export default function StoreOrders() {
                                         />
                                         <div className="flex-1">
                                             <p className="text-slate-800">{item.product?.name}</p>
-                                            <p>Qty: {item.quantity}</p>
+                                            <p>Kg: {item.quantity}</p>
                                             <p>Price: ${item.price}</p>
                                         </div>
                                     </div>

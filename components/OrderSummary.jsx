@@ -41,7 +41,7 @@ const OrderSummary = ({ totalPrice, items }) => {
 
     // [FIX] Reverted to your original message template
     const itemsList = items
-      .map((i) => `• ${i.name} (Kg: ${i.quantity})`)
+      .map((i) => `• ${i.name} (Qty: ${i.quantity})`)
       .join("%0A"); // %0A is a URL-encoded newline
 
     const addressString = `${selectedAddress.street}, ${selectedAddress.city}, ${selectedAddress.state} - ${selectedAddress.zip}`;
@@ -142,7 +142,7 @@ const OrderSummary = ({ totalPrice, items }) => {
 
       // [FIX] Reverted to your original message template
       const itemsList = pendingItems
-        .map((i) => `• ${i.name} (kg: ${i.quantity})`)
+        .map((i) => `• ${i.name} (Qty: ${i.quantity})`)
         .join("%0A");
 
       const addressString = `${selected.street}, ${selected.city}, ${selected.state} - ${selected.zip}`;

@@ -76,7 +76,8 @@ export default function ContactPage() {
             We’re Here to Help
           </h4>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-gray-800">
-            Let’s <span className="text-sky-600">Connect & Keep it Fresh</span> 🌊
+            Let’s <span className="text-sky-600">Connect & Keep it Fresh</span>{" "}
+            🌊
           </h1>
           <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
             Have a question or want to pre-order your favorite seafood? Reach
@@ -127,7 +128,10 @@ export default function ContactPage() {
             </motion.a>
 
             {/* Location */}
-            <motion.div whileHover={{ scale: 1.05 }} className="flex items-center gap-3">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-3"
+            >
               <motion.div
                 animate={{ scale: [1, 1.2, 1], opacity: [1, 0.8, 1] }}
                 transition={{ repeat: Infinity, duration: 2, delay: 0.8 }}
@@ -140,7 +144,10 @@ export default function ContactPage() {
           </div>
 
           {/* WhatsApp Icon */}
-          <motion.div whileHover={{ scale: 1.05 }} className="flex items-center gap-4 pt-4">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center gap-4 pt-4"
+          >
             <a
               href="https://wa.me/919110683618"
               target="_blank"
@@ -281,17 +288,16 @@ export default function ContactPage() {
       </motion.section>
 
       {/* Toast Notification */}
-{/* Toast Notification */}
-{sent && (
-  <motion.div
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: 1, y: 0 }}
-    className="fixed top-5 right-5 bg-sky-600 text-white px-5 py-3 rounded-xl shadow-lg z-[9999]"
-  >
-    Thank you! We'll get back to you soon 🌊
-  </motion.div>
-)}
-
+      {/* Toast Notification */}
+      {sent && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="fixed top-5 right-5 bg-sky-600 text-white px-5 py-3 rounded-xl shadow-lg z-[9999]"
+        >
+          Thank you! We'll get back to you soon 🌊
+        </motion.div>
+      )}
 
       <style jsx>{`
         @keyframes shimmer {

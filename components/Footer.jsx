@@ -47,7 +47,7 @@ const Footer = () => {
               </Link>
               {/* Instagram */}
               <Link
-                href="https://instagram.com"
+                href="https://www.instagram.com/manglorefreshfish.official?igsh=MThzdHE0ZnJjaWFpMw=="
                 target="_blank"
                 className="p-3 bg-pink-100 hover:bg-pink-200 rounded-full transition transform hover:scale-105 shadow-sm"
               >
@@ -55,7 +55,7 @@ const Footer = () => {
               </Link>
               {/* YouTube */}
               <Link
-                href="https://youtube.com"
+                href="https://youtube.com/@manglorefreshfish?si=85sx8Wk_OF-CgeKs"
                 target="_blank"
                 className="p-3 bg-red-100 hover:bg-red-200 rounded-full transition transform hover:scale-105 shadow-sm"
               >

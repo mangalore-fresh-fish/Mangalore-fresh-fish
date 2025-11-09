@@ -14,7 +14,7 @@ const ProductCard = ({ product }) => {
     return (
         <Link href={`/product/${product.id}`} className=' group max-xl:mx-auto'>
             {/* UPDATED: Fixed sm:h-68 to sm:h-64 */}
-            <div className='bg-[#F5F5F5] h-40 sm:w-60 sm:h-64 rounded-lg flex items-center justify-center overflow-hidden'>
+            <div className='bg-white h-40 sm:w-60 sm:h-64 rounded-lg flex items-center border border-gray-300 justify-center overflow-hidden'>
                 {/* UPDATED: Fixed max-h-30 to max-h-32 */}
                 <Image width={500} height={500} className='max-h-32 sm:max-h-40 w-auto group-hover:scale-115 transition duration-300' src={product.images[0]} alt="" />
             </div>

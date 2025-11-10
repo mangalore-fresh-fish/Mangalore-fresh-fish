@@ -111,7 +111,9 @@ const OrderSummary = ({ totalPrice, items }) => {
         typeof pendingOrderData.totalPrice !== "number" ||
         !pendingOrderData.phone
       ) {
-        toast.error("Order snapshot not found. Please try again from the cart.");
+        toast.error(
+          "Order snapshot not found. Please try again from the cart."
+        );
         return;
       }
 
@@ -235,7 +237,12 @@ const OrderSummary = ({ totalPrice, items }) => {
             )}
             <button
               className="flex items-center gap-1 text-slate-600 mt-1"
-              onClick={() => setShowAddressModal(true)}
+              onClick={() => {
+                if (!user) {
+                  return toast.error("Please login before adding address");
+                }
+                setShowAddressModal(true);
+              }}
             >
               ➕ Add Address <PlusIcon size={18} />
             </button>
@@ -403,20 +410,20 @@ const OrderSummary = ({ totalPrice, items }) => {
                 ))}
                 <p className="mt-3 font-medium">
                   💳 {pendingOrderData?.paymentMethod}
-                  <br />💵 {currency}
+                  <br />
+                  💵 {currency}
                   {(pendingOrderData?.totalPrice ?? 0).toLocaleString()}
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row justify-center gap-3">
-               
                 <button
                   onClick={() => setShowResendPopup(false)}
                   className="w-full sm:flex-1 px-6 py-3 rounded-lg font-medium border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 active:scale-[0.98] transition-all text-base"
                 >
                   Cancel
                 </button>
-                 <button
+                <button
                   onClick={handleResendOrder}
                   className="w-full sm:flex-1 px-6 py-3 rounded-lg font-medium text-white bg-cyan-600 hover:bg-cyan-700 active:scale-[0.98] transition-all text-base shadow-sm"
                 >

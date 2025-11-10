@@ -46,7 +46,7 @@ const ProductDetails = ({ product }) => {
     <>
       <div className="flex flex-col md:flex-row gap-10 lg:gap-16">
         <div className="w-full md:w-1/2">
-          <div className="bg-[#F5F5F5] rounded-lg flex items-center justify-center h-80 sm:h-96 md:h-[500px] overflow-hidden">
+          <div className="bg-white rounded-lg flex items-center justify-center border border-gray-300 h-80 sm:h-96 md:h-[500px] overflow-hidden">
             <Image
               width={500}
               height={500}

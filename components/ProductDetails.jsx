@@ -14,6 +14,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Counter from "./Counter";
 import { useDispatch, useSelector } from "react-redux";
+import { useUser, useClerk } from "@clerk/nextjs";
 
 const ProductDetails = ({ product }) => {
   const productId = product.id;
@@ -23,17 +24,30 @@ const ProductDetails = ({ product }) => {
   const dispatch = useDispatch();
   const router = useRouter();
 
-  // ✅ Hooks go here (inside component)
   const [mainImage, setMainImage] = useState(product.images[0]);
-  const [added, setAdded] = useState(false); // 👈 now valid
+  const [added, setAdded] = useState(false);
 
+  // ✅ Clerk hooks
+  const { isSignedIn } = useUser();
+  const { openSignIn } = useClerk();
+
+  // ✅ Modified handler
   const addToCartHandler = () => {
+    if (!isSignedIn) {
+      if (openSignIn) {
+        openSignIn(); // opens Clerk login modal
+      } else {
+        router.push("/sign-in"); // fallback redirect
+      }
+      return;
+    }
+
     dispatch(addToCart({ productId }));
-    setAdded(true); // 👈 mark as added
+    setAdded(true);
   };
 
   const goToCartHandler = () => {
-    router.push("/cart"); // 👈 navigate to cart
+    router.push("/cart");
   };
 
   const averageRating =
@@ -118,41 +132,44 @@ const ProductDetails = ({ product }) => {
 
           <hr className="my-6" />
 
-<div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-  {/* Quantity Counter */}
-  <div className="flex items-center justify-between w-full sm:w-auto bg-gray-50 border border-gray-200 rounded-lg p-2 shadow-sm hover:shadow-md transition-all duration-300">
-    <Counter productId={productId} />
-  </div>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+            {/* Quantity Counter */}
+            {/* <div className="flex items-center justify-between w-full sm:w-auto bg-gray-50 border border-gray-200 rounded-lg p-2 shadow-sm hover:shadow-md transition-all duration-300">
+              <Counter productId={productId} />
+            </div> */}
 
-  {/* Add / Go to Cart Button */}
-  <button
-    onClick={added ? goToCartHandler : addToCartHandler}
-    className={`group relative w-full sm:w-80 px-6 py-3.5 rounded-lg font-semibold text-white transition-all duration-300 
+            {/* Add / Go to Cart Button */}
+            <button
+              onClick={added ? goToCartHandler : addToCartHandler}
+              className={`group relative w-full sm:w-80 px-6 py-3.5 rounded-lg font-semibold text-white transition-all duration-300 
       ${
         added
           ? "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800"
           : "bg-gradient-to-r from-green-600 to-emerald-700 hover:from-green-700 hover:to-emerald-800"
       } shadow-md hover:shadow-lg`}
-  >
-    <span className="flex items-center justify-center gap-2 text-lg tracking-wide">
-      {added ? (
-        <>
-          Go to Cart <span className="transition-transform group-hover:translate-x-1">🛒</span>
-        </>
-      ) : (
-        <>
-          Add to Cart <span className="transition-transform group-hover:scale-110"></span>
-        </>
-      )}
-    </span>
+            >
+              <span className="flex items-center justify-center gap-2 text-lg tracking-wide">
+                {added ? (
+                  <>
+                    Go to Cart{" "}
+                    <span className="transition-transform group-hover:translate-x-1">
+                      🛒
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    Add to Cart{" "}
+                    <span className="transition-transform group-hover:scale-110"></span>
+                  </>
+                )}
+              </span>
 
-    {/* Animated Glow */}
-    <span
-      className={`absolute inset-0 rounded-lg bg-white/20 opacity-0 group-hover:opacity-100 blur-md transition-all duration-500`}
-    ></span>
-  </button>
-</div>
-
+              {/* Animated Glow */}
+              <span
+                className={`absolute inset-0 rounded-lg bg-white/20 opacity-0 group-hover:opacity-100 blur-md transition-all duration-500`}
+              ></span>
+            </button>
+          </div>
         </div>
       </div>
 
